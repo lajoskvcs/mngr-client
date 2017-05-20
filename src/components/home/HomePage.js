@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from 'reactstrap';
 
 class HomePage extends React.Component {
     constructor(props, context) {
@@ -8,7 +9,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <p>Home</p>
+                <Button>Juhéé</Button>
             </div>
         );
     }
