@@ -13,8 +13,6 @@ class UnauthenticatedApp extends React.Component {
     componentDidUpdate(prevProps) {
         if (this.props.currentUser != null) {
             browserHistory.push("/dashboard");
-        } else if (isLoggingOut) {
-            // do any kind of cleanup or post-logout redirection here
         }
     }
 

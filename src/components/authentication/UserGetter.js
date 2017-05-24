@@ -1,4 +1,4 @@
-import React from "react";
+import React, {PropTypes} from "react";
 import { browserHistory } from 'react-router';
 import {connect} from 'react-redux';
 import {loadCurrentUser} from '../../actions/currentUserActions';

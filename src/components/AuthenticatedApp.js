@@ -13,9 +13,7 @@ class AuthApp extends React.Component {
     componentDidUpdate(prevProps) {
         if (this.props.currentUser == null) {
             browserHistory.push("/login");
-        } else if (isLoggingOut) {
-            // do any kind of cleanup or post-logout redirection here
-        }
+        } 
     }
 
     render() {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {PropTypes} from "react";
 import {Form, FormGroup, Label, Input, Button, Card, CardText, CardTitle, Row, Col} from 'reactstrap';
 import { browserHistory } from 'react-router';
 import {connect} from 'react-redux';
