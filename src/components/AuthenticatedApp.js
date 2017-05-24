@@ -45,7 +45,7 @@ let mapStateToProps = function(state) {
     return {
         currentUser: state.currentUser,
         tokens: state.tokens
-    }
+    };
 };
 
 

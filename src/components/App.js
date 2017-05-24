@@ -21,7 +21,7 @@ App.propTypes = {
 };
 
 let mapStateToProps = function(state) {
-    return {}
+    return {};
 };
 
 export default connect(mapStateToProps)(App);

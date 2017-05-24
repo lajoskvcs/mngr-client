@@ -13,10 +13,6 @@ class UserGetter extends React.Component {
         this.getCurrentUser = this.getCurrentUser.bind(this);
     }
 
-    componentDidMount() {
-        console.log(this.props);
-    }
-
     getCurrentUser() {
         this.props.loadCurrentUser(this.props.access_token);
         browserHistory.push("/dashboard");
@@ -42,7 +38,7 @@ let mapStateToProps = function(state) {
     return {
         access_token: state.tokens.access_token,
         currentUser: state.currentUser
-    }
+    };
 };
 
 let mapDispatchToProps = function (dispatch) {
@@ -50,6 +46,6 @@ let mapDispatchToProps = function (dispatch) {
         loadCurrentUser: (access_token) => {
             dispatch(loadCurrentUser(access_token));
         }
-    })
+    });
 };
 export default connect(mapStateToProps, mapDispatchToProps)(UserGetter);

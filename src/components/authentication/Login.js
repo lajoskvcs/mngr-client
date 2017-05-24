@@ -32,8 +32,6 @@ class Login extends React.Component {
     }
 
     signIn() {
-        console.log(this.state.username);
-        console.log(this.state.password);
         this.props.loadTokens(this.state.username, this.state.password);
         browserHistory.push("/getCurrentUser");
     }
@@ -74,7 +72,7 @@ class Login extends React.Component {
 let mapStateToProps = function(state) {
     return {
         access_token: state.tokens.access_token
-    }
+    };
 };
 
 let mapDispatchToProps = function (dispatch) {
@@ -82,6 +80,6 @@ let mapDispatchToProps = function (dispatch) {
         loadTokens: (username, password) => {
             dispatch(loadTokens(username, password));
         }
-    })
+    });
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

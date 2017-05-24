@@ -49,14 +49,14 @@ class Header extends React.Component {
                     </li>
                 </ul>
             </nav>
-        )
+        );
     }
 }
 
 let mapStateToProps = function(state) {
     return {
         currentUser: (state.currentUser == null)? {} : state.currentUser
-    }
+    };
 };
 
 export default connect(mapStateToProps)(Header);
