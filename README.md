@@ -1,0 +1,2 @@
+# mngr-client
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bbdeb921fc034808a3d21e15213d7f15)](https://www.codacy.com/app/realdiwin/mngr-client?utm_source=github.com&utm_medium=referral&utm_content=realdiwin/mngr-client&utm_campaign=badger)
