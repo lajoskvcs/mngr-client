@@ -1,0 +1,14 @@
+body {
+  background-image: url('public/bg.png');
+}
+
+.floating-centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-28.5px) translateY(-28.5px);
+}
+
+.nav-buttons-margin {
+  margin-left: 145px;
+}
