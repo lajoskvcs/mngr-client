@@ -5,15 +5,15 @@ class Header extends React.Component {
         return (
             <div className="loader floating-centered">
                 <div className="ball-grid-pulse">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
                 </div>
             </div>
         );

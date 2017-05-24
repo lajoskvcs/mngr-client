@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 class EnsureLoggedInContainer extends React.Component {
     componentDidMount() {
-        const { dispatch, currentURL } = this.props;
+        //const { dispatch, currentURL } = this.props;
 
         //if (!isLoggedIn) {
             // set the current url/path for future redirection (we use a Redux action)

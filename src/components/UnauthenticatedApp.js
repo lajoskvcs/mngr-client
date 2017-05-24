@@ -11,10 +11,6 @@ class UnauthenticatedApp extends React.Component {
         }
     }
     componentDidUpdate(prevProps) {
-        const { dispatch, redirectUrl } = this.props;
-        const isLoggingOut = prevProps.isLoggedIn && !this.props.isLoggedIn;
-        const isLoggingIn = !prevProps.isLoggedIn && this.props.isLoggedIn;
-
         if (this.props.currentUser != null) {
             browserHistory.push("/dashboard");
         } else if (isLoggingOut) {
@@ -34,7 +30,9 @@ class UnauthenticatedApp extends React.Component {
 }
 
 UnauthenticatedApp.propTypes = {
-    children: PropTypes.object.isRequired
+    children: PropTypes.object.isRequired,
+    currentUser: PropTypes.object.isRequired,
+    tokens: PropTypes.object.isRequired
 };
 
 let mapStateToProps = function(state) {

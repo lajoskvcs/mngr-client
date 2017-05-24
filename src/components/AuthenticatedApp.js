@@ -11,10 +11,6 @@ class AuthApp extends React.Component {
         }
     }
     componentDidUpdate(prevProps) {
-        const { dispatch, redirectUrl } = this.props;
-        const isLoggingOut = prevProps.isLoggedIn && !this.props.isLoggedIn;
-        const isLoggingIn = !prevProps.isLoggedIn && this.props.isLoggedIn;
-
         if (this.props.currentUser == null) {
             browserHistory.push("/login");
         } else if (isLoggingOut) {
@@ -37,9 +33,11 @@ class AuthApp extends React.Component {
     }
 }
 
-/*AuthApp.propTypes = {
-    children: PropTypes.object.isRequired
-};*/
+AuthApp.propTypes = {
+    children: PropTypes.object.isRequired,
+    tokens: PropTypes.object.isRequired,
+    currentUser: PropTypes.object.isRequired
+};
 
 let mapStateToProps = function(state) {
     return {

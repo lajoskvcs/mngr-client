@@ -43,7 +43,7 @@ class Header extends React.Component {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link mt-1 ml-4" to="/logout">
-                            Kijelentkezés <i className="fa fa-sign-out"></i>
+                            Kijelentkezés <i className="fa fa-sign-out" />
                         </Link>
 
                     </li>
@@ -52,6 +52,10 @@ class Header extends React.Component {
         );
     }
 }
+
+Header.propTypes = {
+    currentUser: PropTypes.object.isRequired
+};
 
 let mapStateToProps = function(state) {
     return {

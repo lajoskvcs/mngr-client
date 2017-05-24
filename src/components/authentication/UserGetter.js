@@ -34,6 +34,12 @@ class UserGetter extends React.Component {
 
 }
 
+UserGetter.propTypes = {
+    access_token: PropTypes.object.isRequired,
+    currentUser: PropTypes.object.isRequired,
+    loadCurrentUser: PropTypes.object.isRequired
+};
+
 let mapStateToProps = function(state) {
     return {
         access_token: state.tokens.access_token,

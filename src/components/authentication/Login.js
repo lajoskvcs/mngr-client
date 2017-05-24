@@ -7,9 +7,6 @@ import {loadTokens} from '../../actions/tokenActions';
 class Login extends React.Component {
     constructor(props, context) {
         super(props, context);
-        if(this.props.isLoggedIn) {
-            browserHistory.push('/dashboard');
-        }
         this.state = {
             username: '',
             password: ''
@@ -68,6 +65,11 @@ class Login extends React.Component {
     }
 
 }
+
+Login.propTypes = {
+    access_token: PropTypes.object.isRequired,
+    loadTokens: PropTypes.object.isRequired
+};
 
 let mapStateToProps = function(state) {
     return {
