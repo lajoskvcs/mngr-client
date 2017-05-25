@@ -26,5 +26,41 @@ class AuthApi {
             return error;
         });
     }
+    static registerUser(
+        username,
+        password,
+        firstname,
+        lastname,
+        email,
+        address,
+        borndate,
+        company
+    ){
+        let data = {
+            username: username,
+            password: password,
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            address: address,
+            bornDate: borndate,
+            company: company
+        };
+        return fetch(
+            'http://localhost:8080/users/register',
+            {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+            }
+        ).then(response => {
+            return response.json();
+        }).catch(error => {
+            return error;
+        });
+    }
 }
 export default AuthApi;

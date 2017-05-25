@@ -15,6 +15,11 @@ class Login extends React.Component {
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.signIn = this.signIn.bind(this);
     }
+    componentDidUpdate(prevProps, prevState) {
+        if(this.props.access_token != null) {
+            browserHistory.push("/getCurrentUser");
+        }
+    }
 
 
     redirectTo(e) {
@@ -30,7 +35,6 @@ class Login extends React.Component {
 
     signIn() {
         this.props.loadTokens(this.state.username, this.state.password);
-        browserHistory.push("/getCurrentUser");
     }
 
 
