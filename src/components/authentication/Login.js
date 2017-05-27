@@ -41,7 +41,7 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                    <Card block>
+                    <Card block color="danger">
                         <CardTitle>Login</CardTitle>
                         <CardText>
                             <Row>
@@ -61,7 +61,7 @@ class Login extends React.Component {
                                 </Col>
                             </Row>
                         </CardText>
-                        <Button onClick={this.signIn}>Sign in</Button>
+                        <Button onClick={this.signIn} className="mb-1">Sign in</Button>
                         <Button onClick={this.redirectTo} to="/register">Sign up</Button>
                     </Card>
             </div>

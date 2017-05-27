@@ -9,7 +9,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="container-fluid p-0">
+            <div className="container-fluid p-0 height-100-percent">
                 {this.props.children}
             </div>
         );

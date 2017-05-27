@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react';
 import { connect } from 'react-redux';
 import {browserHistory} from 'react-router';
 import Header from './common/Header';
-import SideBar from './common/Sidebar';
 
 class AuthApp extends React.Component {
     componentDidMount() {
@@ -18,13 +17,10 @@ class AuthApp extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="height-100-percent">
                 <Header currentUser={this.props.currentUser} />
-                <div className="container-fluid p-0">
-                    <div className="row row-offcanvas row-offcanvas-left">
-                        <SideBar />
+                <div className="container-fluid p-0 height-100-percent">
                         {this.props.children}
-                    </div>
                 </div>
             </div>
         );

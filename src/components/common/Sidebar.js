@@ -4,7 +4,7 @@ import {Nav, NavItem, NavLink} from 'reactstrap';
 
 const SideBar = () => {
     return (
-        <div className="card rounded-0 col-md-3 col-lg-2 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div className="card rounded-0 col-md-3 col-lg-2 sidebar-offcanvas  height-100-percent mr-2" id="sidebar" role="navigation">
             <Nav className="pl-0 flex-column">
                 <NavItem>
                     <NavLink href="#">Overview</NavLink>

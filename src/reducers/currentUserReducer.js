@@ -5,6 +5,8 @@ export default function currentUserReducer(state = initialState.currentUser, act
     switch(action.type) {
         case types.LOAD_CURRENT_USER_SUCCESS:
             return action.user;
+        case types.DROP_STORE:
+            return null;
         default:
             return state;
     }

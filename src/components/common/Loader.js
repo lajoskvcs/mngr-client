@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import 'loaders.css';
-class Header extends React.Component {
+class Loader extends React.Component {
     render() {
         return (
             <div className="loader floating-centered">
@@ -21,4 +21,5 @@ class Header extends React.Component {
 }
 
 
-export default Header;
+
+export default Loader;

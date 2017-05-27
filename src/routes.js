@@ -5,8 +5,11 @@ import UnauthenticatedApp from './components/UnauthenticatedApp';
 import AuthApp from './components/AuthenticatedApp';
 import HomePage from './components/home/HomePage';
 import Login from './components/authentication/Login';
+import Logout from './components/authentication/Logout';
 import Register from './components/authentication/Register';
 import UserGetter from './components/authentication/UserGetter';
+import Dashboard from './components/dashboard/Dashboard';
+import Projects from './components/projects/Projects';
 
 export default (
 <Route path="/" component={App}>
@@ -17,7 +20,9 @@ export default (
         <Route path="register" component={Register}/>
     </Route>
     <Route component={AuthApp}>
-        <Route path="dashboard" />
+        <Route path="logout" component={Logout}/>
+        <Route path="dashboard" component={Dashboard} />
+        <Route path="projects" component={Projects} />
     </Route>
 </Route>
 );

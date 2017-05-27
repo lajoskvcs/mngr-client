@@ -18,9 +18,11 @@ class Header extends React.Component {
     }
     render() {
         let gravatar;
-        if(this.props.currentUser.email) {
+        if(this.props.currentUser.email != null) {
             gravatar = "https://www.gravatar.com/avatar/" + MD5(this.props.currentUser.email.trim().toLowerCase()) + "&s=50";
         }
+        let firstname = (this.props.currentUser.firstName != null)? this.props.currentUser.firstName: '';
+        let lastname = (this.props.currentUser.lastName != null)? this.props.currentUser.lastName: '';
         return (
             <nav className="navbar navbar-fixed-top navbar-toggleable-sm navbar-inverse bg-primary">
                 <div className="flex-row d-flex">
@@ -38,12 +40,12 @@ class Header extends React.Component {
                     <li className="navbar-text">
                         <span className="" onClick={this.toggle}>
                             <img src={gravatar} className="rounded-circle mr-3" width="35"/>
-                            {this.props.currentUser.firstName} {this.props.currentUser.lastName}
+                            {firstname} {lastname}
                         </span>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link mt-1 ml-4" to="/logout">
-                            Kijelentkezés <i className="fa fa-sign-out" />
+                            Logout <i className="fa fa-sign-out" />
                         </Link>
 
                     </li>

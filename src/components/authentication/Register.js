@@ -159,8 +159,8 @@ class Register extends React.Component {
                                 </Col>
                             </Row>
                         </CardText>
-                        <Button onClick={this.register}>Sign up</Button>
-                        <Button onClick={this.redirectTo} to="/login">Sign in</Button>
+                        <Button onClick={this.register} className="mb-1">Sign up</Button>
+                        <Button onClick={this.redirectTo} to="/login"><i className="fa fa-arrow-left" /> Sign in</Button>
                     </Card>
                 </Form>
             </div>
