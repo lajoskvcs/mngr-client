@@ -17,6 +17,13 @@ class Header extends React.Component {
         this.setState({dropdownOpen: !this.state.dropdownOpen});
     }
     render() {
+        let brand;
+        if(this.props.project == null) {
+            brand = <a className="navbar-brand mb-1" href="#" title="">MNGR</a>;
+        } else {
+            brand = <a className="navbar-brand mb-1" href="#" title="">{this.props.project.name}</a>
+        }
+
         let gravatar;
         if(this.props.currentUser.email != null) {
             gravatar = "https://www.gravatar.com/avatar/" + MD5(this.props.currentUser.email.trim().toLowerCase()) + "&s=50";
@@ -26,10 +33,10 @@ class Header extends React.Component {
         return (
             <nav className="navbar navbar-fixed-top navbar-toggleable-sm navbar-inverse bg-primary">
                 <div className="flex-row d-flex">
-                    <a className="navbar-brand mb-1" href="#" title="Free Bootstrap 4 Admin Template">MNGR</a>
+                    {brand}
                 </div>
                 <ul className="navbar-nav nav-buttons-margin">
-                    <li className="nav-item active">
+                    <li className="nav-item">
                         <IndexLink className="nav-link" to="/dashboard" activeClassName="active">Dashboard</IndexLink>
                     </li>
                     <li className="nav-item">
@@ -61,7 +68,8 @@ Header.propTypes = {
 
 let mapStateToProps = function(state) {
     return {
-        currentUser: (state.currentUser == null)? {} : state.currentUser
+        currentUser: (state.currentUser == null)? {} : state.currentUser,
+        project: state.selectedProject
     };
 };
 

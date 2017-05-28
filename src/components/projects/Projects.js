@@ -2,13 +2,14 @@ import React, {PropTypes} from "react";
 import {Card, CardBlock, CardSubtitle, CardLink, CardText, CardTitle, Row, Col} from 'reactstrap';
 import { browserHistory } from 'react-router';
 import {connect} from 'react-redux';
-import {loadProjects, selectProject} from '../../actions/projectActions';
+import {loadProjects, selectProject, unloadProject} from '../../actions/projectActions';
 import Loader from '../common/Loader';
 import moment from 'moment';
 
 class Projects extends React.Component {
     constructor(props, context) {
         super(props, context);
+        this.props.unloadProject();
         this.props.loadProjects(this.props.access_token);
         this.selectProject = this.selectProject.bind(this);
     }
@@ -19,7 +20,7 @@ class Projects extends React.Component {
     }
     selectProject(e) {
         let id = e.target.id;
-        this.props.selectProject(id, this.props.projects);
+        browserHistory.push("/projects/"+id);
 
     }
     render() {
@@ -72,6 +73,9 @@ let mapDispatchToProps = function (dispatch) {
         },
         selectProject: (id, projects) => {
             dispatch(selectProject(id, projects));
+        },
+        unloadProject: () => {
+            dispatch(unloadProject());
         }
     });
 };

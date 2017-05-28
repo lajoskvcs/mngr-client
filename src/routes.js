@@ -10,6 +10,9 @@ import Register from './components/authentication/Register';
 import UserGetter from './components/authentication/UserGetter';
 import Dashboard from './components/dashboard/Dashboard';
 import Projects from './components/projects/Projects';
+import Project from './components/projects/Project';
+import Notes from './components/projects/Notes';
+import Tasks from './components/projects/Tasks';
 
 export default (
 <Route path="/" component={App}>
@@ -23,6 +26,9 @@ export default (
         <Route path="logout" component={Logout}/>
         <Route path="dashboard" component={Dashboard} />
         <Route path="projects" component={Projects} />
+        <Route path="projects/:projectId" component={Project} />
+        <Route path="projects/:projectId/notes" component={Notes} />
+        <Route path="projects/:projectId/tasks" component={Tasks} />
     </Route>
 </Route>
 );

@@ -3,11 +3,13 @@ import {Card, CardText, CardTitle, Row, Col} from 'reactstrap';
 import { browserHistory } from 'react-router';
 import {connect} from 'react-redux';
 import {loadDashboard} from '../../actions/dashboardActions';
+import {unloadProject} from '../../actions/projectActions';
 import LoaderSmall from '../common/LoaderSmall';
 
 class Dashboard extends React.Component {
     constructor(props, context) {
         super(props, context);
+        this.props.unloadProject();
         this.props.loadDashboard(this.props.access_token);
     }
 
@@ -73,6 +75,9 @@ let mapDispatchToProps = function (dispatch) {
     return({
         loadDashboard: (access_token) => {
             dispatch(loadDashboard(access_token));
+        },
+        unloadProject: () => {
+            dispatch(unloadProject());
         }
     });
 };

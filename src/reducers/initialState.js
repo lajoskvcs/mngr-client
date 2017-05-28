@@ -5,11 +5,13 @@ export default {
     },
     currentUser: null,
     projects: [],
-    selectedProject: {},
+    selectedProject: null,
     dashboard: {
         projectNumber: 0,
         inPlanTaskNumber: 0,
         inProgressTaskNumber: 0,
         doneTaskNumber: 0
-    }
+    },
+    note: null,
+    tasks: null
 };
