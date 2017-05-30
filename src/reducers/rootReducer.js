@@ -6,6 +6,7 @@ import tokens from './tokenReducer';
 import selectedProject from './selectedProjectReducer';
 import note from './noteReducer';
 import tasks from './tasksReducer';
+import task from './taskReducer';
 
 const rootReducer = combineReducers({
     tokens,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     dashboard,
     selectedProject,
     note,
-    tasks
+    tasks,
+    task
 });
 
 export default rootReducer;

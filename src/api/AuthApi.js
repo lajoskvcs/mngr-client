@@ -7,7 +7,7 @@ class AuthApi {
                 headers: {
                     'Authorization': 'Basic '+btoa('trusted-client:asd123'),
                     'Content-Type': 'application/x-www-form-urlencoded'
-                },
+                }
             }
         ).then(
             response => {
@@ -39,8 +39,8 @@ class AuthApi {
         let data = {
             username: username,
             password: password,
-            firstname: firstname,
-            lastname: lastname,
+            firstName: firstname,
+            lastName: lastname,
             email: email,
             address: address,
             bornDate: borndate,
@@ -54,7 +54,47 @@ class AuthApi {
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
                     'Content-Type': 'application/json'
-                },
+                }
+            }
+        ).then(response => {
+            return response.json();
+        }).catch(error => {
+            return error;
+        });
+    }
+
+    static updateUser(
+        access_token,
+        id,
+        username,
+        password,
+        firstname,
+        lastname,
+        email,
+        address,
+        borndate,
+        company
+    ){
+        let data = {
+            id: id,
+            username: username,
+            password: password,
+            firstName: firstname,
+            lastName: lastname,
+            email: email,
+            address: address,
+            bornDate: borndate,
+            company: company
+        };
+        return fetch(
+            'http://localhost:8080/user?access_token='+access_token,
+            {
+                method: 'PATCH',
+                body: JSON.stringify(data),
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                }
             }
         ).then(response => {
             return response.json();

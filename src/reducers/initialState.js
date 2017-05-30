@@ -13,5 +13,6 @@ export default {
         doneTaskNumber: 0
     },
     note: null,
-    tasks: null
+    tasks: null,
+    task: null
 };
