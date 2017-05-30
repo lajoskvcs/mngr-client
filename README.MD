@@ -21,17 +21,31 @@ npm installed
 
 ### Installing
 
+```
+npm install
+```
+
+You have to install Electron too.
+
+### Run the client
+
+```
+npm run start
+```
 
 ## Running the tests
 
-nvm test
+npm test
 
 
 ## Built With
 
 * [React](https://facebook.github.io/react/) - The front-end framework for development
 * [npm](https://nodejs.org/) - Dependency Management
-* [webpack]
+* [webpack] - Packaging
+* [User your illusion](http://www.subtlepatterns.com) - Background image
+* [Loaders.css](https://connoratherton.com/loaders) - Loader animation
+
 
 ## Authors
 
