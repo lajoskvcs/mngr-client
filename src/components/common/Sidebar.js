@@ -12,17 +12,21 @@ class SideBar extends React.Component {
         let overview = () => browserHistory.push("/projects/"+this.props.project.id);
         let task_board = () => browserHistory.push("/projects/"+this.props.project.id+"/tasks");
         let notes = () => browserHistory.push("/projects/"+this.props.project.id+"/notes");
+        let editProject = () => browserHistory.push("/projects/"+this.props.project.id+"/edit");
         return (
             <div className="card mr-1 rounded-0 height-100-percent" id="sidebar" role="navigation">
                 <Nav className="pl-0 flex-column">
                     <NavItem>
-                        <NavLink onClick={overview}>Overview</NavLink>
+                        <NavLink onClick={overview} href="#">Overview</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink onClick={task_board} href="#">Task board</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink onClick={notes} href="#">Notes</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink onClick={editProject} href="#">Edit project</NavLink>
                     </NavItem>
                 </Nav>
             </div>

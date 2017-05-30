@@ -13,6 +13,9 @@ import Projects from './components/projects/Projects';
 import Project from './components/projects/Project';
 import Notes from './components/projects/Notes';
 import Tasks from './components/projects/Tasks';
+import Task from './components/projects/Task';
+import UserForm from './components/authentication/UserForm';
+import ProjectEditor from './components/projects/ProjectEditor';
 
 export default (
 <Route path="/" component={App}>
@@ -29,6 +32,9 @@ export default (
         <Route path="projects/:projectId" component={Project} />
         <Route path="projects/:projectId/notes" component={Notes} />
         <Route path="projects/:projectId/tasks" component={Tasks} />
+        <Route path="projects/:projectId/tasks/:taskId" component={Task} />
+        <Route path="projects/:projectId/edit" component={ProjectEditor} />
+        <Route path="user" component={UserForm} />
     </Route>
 </Route>
 );

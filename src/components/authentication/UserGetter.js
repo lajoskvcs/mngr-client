@@ -15,11 +15,13 @@ class UserGetter extends React.Component {
 
     getCurrentUser() {
         this.props.loadCurrentUser(this.props.access_token);
-        browserHistory.push("/dashboard");
     }
 
 
     render() {
+        if(this.props.currentUser != null) {
+            browserHistory.push("/dashboard");
+        }
 
         if(this.props.access_token != null) {
             this.getCurrentUser();
